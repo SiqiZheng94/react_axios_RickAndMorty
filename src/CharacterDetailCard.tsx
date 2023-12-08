@@ -27,6 +27,7 @@ export default function CharacterDetailCard(props:CharacterDetailCardProps) {
         if (characterData) {
             // renderCharacterDetails(characterData);
             setSelectedCharacter(characterData)
+            setError("")
         } else {
             setError("NOT FOUND!")
         }
