@@ -1,5 +1,5 @@
 import {ChangeEvent, FormEvent, useState} from "react";
-import {Character} from "./characters.ts";
+import {Character} from "../App.tsx";
 type AddNewCharacterProps={
     addNewCharacter:(newCharacter:Character)=>void
 }
@@ -33,6 +33,7 @@ export default function AddNewCharacter(props:AddNewCharacterProps){
 
 
     function submitNewCharacter(event:FormEvent<HTMLFormElement>){
+        // form submission doesn't trigger the default behavior, then handle it as needed
         event.preventDefault()
         const newCharacter = {
             name:inputName,

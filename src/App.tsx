@@ -1,12 +1,12 @@
 import './App.css'
 import React, {useEffect, useState} from "react";
-import CharacterGallery from "./CharacterGallery.tsx";
+import CharacterGallery from "./components/CharacterGallery.tsx";
 import {Link, Navigate, Route, Routes, useParams} from "react-router-dom";
-import Welcome from "./Welcome.tsx";
-import Navigation from "./Navigation.tsx";
-import CharacterCard from "./CharacterCard.tsx";
-import CharacterDetailCard from "./CharacterDetailCard.tsx";
-import AddNewCharacter from "./addNewCharacter.tsx";
+import Welcome from "./components/Welcome.tsx";
+import Navigation from "./components/Navigation.tsx";
+import CharacterCard from "./components/CharacterCard.tsx";
+import CharacterDetailCard from "./components/CharacterDetailCard.tsx";
+import AddNewCharacter from "./components/addNewCharacter.tsx";
 import axios from "axios";
 
 
@@ -55,13 +55,11 @@ function App() {
         ()=>{fetchData()}, [pageId]
     )
     function nextPage(){
-        if (pageId<42){
-            setPageId(pageId+1)
-    }}
+        pageId < 42 ? setPageId(pageId+1) : alert("This is the last page!")
+    }
     function previousPage(){
-        if (pageId > 1) {
-            setPageId(pageId-1)
-        }}
+        pageId > 1 ? setPageId(pageId-1) : alert("This is the first page!")
+        }
 
     return (
         <>

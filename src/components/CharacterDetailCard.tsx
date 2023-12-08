@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import {Character} from "./App.tsx";
-import AddNewCharacter from"./addNewCharacter.tsx"
+import {Character} from "../App.tsx";
+import AddNewCharacter from "./addNewCharacter.tsx"
 
 type CharacterDetailCardProps={
     charactersList:Character[]
