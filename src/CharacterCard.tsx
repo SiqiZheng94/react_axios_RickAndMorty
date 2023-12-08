@@ -1,4 +1,4 @@
-import {Character} from "./characters.ts";
+import {Character} from "./App.tsx";
 import {Link, useNavigate} from "react-router-dom";
 
 type CharacterCardProps = {

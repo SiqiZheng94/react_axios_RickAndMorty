@@ -1,22 +1,22 @@
-import {Character} from "./characters.ts";
+import {Character} from "./App.tsx";
 import CharacterCard from "./CharacterCard.tsx";
 import axios from "axios";
+import {useEffect, useState} from "react";
 
 type CharacterGalleryProps = {
     characters: Character[]
+    previous: ()=>void
+    next: ()=>void
 }
-
-// const fetchData = ()=>{
-//     axios.get("https://rickandmortyapi.com/api/character")
-//         .then((response)=>console.log(response.data.results)
-//         )
-// }
 
 export default function CharacterGallery(props: CharacterGalleryProps) {
 
+
+
+
     return (
+        <>
         <div>
-            {/*<button onClick={fetchData}>click</button>*/}
             <h2>
                 ---Gallery---
             </h2>
@@ -24,5 +24,7 @@ export default function CharacterGallery(props: CharacterGalleryProps) {
                                                                 key={character.id}
                                                                 character={character}/>)}
         </div>
+        <button onClick={props.previous}>-</button><button onClick={props.next}>+</button>
+        </>
     )
 }
