@@ -10,6 +10,14 @@ export default function AddNewCharacter(props:AddNewCharacterProps){
     function nameOnChange(event:ChangeEvent<HTMLInputElement>){
         setInputName(event.target.value)
     }
+    const [inputStatus, setInputStatus] = useState<string>("")
+    function statusOnChange(event:ChangeEvent<HTMLInputElement>){
+        setInputStatus(event.target.value)
+    }
+    const [inputType, setInputType] = useState<string>("")
+    function typeOnChange(event:ChangeEvent<HTMLInputElement>){
+        setInputType(event.target.value)
+    }
     const [inputSpecies, setInputSpecies] = useState<string>("")
     function speciesOnChange(event:ChangeEvent<HTMLInputElement>){
         setInputSpecies(event.target.value)
@@ -18,17 +26,30 @@ export default function AddNewCharacter(props:AddNewCharacterProps){
     function imageOnChange(event:ChangeEvent<HTMLInputElement>){
         setInputImageURL(event.target.value)
     }
+    const [inputId, setInputId] = useState<number>(0)
+    function idOnChange(event:ChangeEvent<HTMLInputElement>){
+        setInputId(Number(event.target.value))
+    }
 
 
     function submitNewCharacter(event:FormEvent<HTMLFormElement>){
         event.preventDefault()
-        const newCharacter = {name:inputName,status:"",id:0,species:inputSpecies,type:"",image:inputImageURL}
+        const newCharacter = {
+            name:inputName,
+            status:inputStatus,
+            id:inputId,
+            species:inputSpecies,
+            type:inputType,
+            image:inputImageURL
+        }
         alert("Successful!")
         props.addNewCharacter(newCharacter)
         setInputName("")
         setInputSpecies("")
         setInputImageURL("")
-
+        setInputId(0)
+        setInputStatus("")
+        setInputType("")
     }
 
     return(
@@ -44,6 +65,20 @@ export default function AddNewCharacter(props:AddNewCharacterProps){
                                   placeholder={"character species"}
                                   value={inputSpecies}
                                   onChange={speciesOnChange}
+                /></div>
+                <div>status: <input type={"text"}
+                                     placeholder={"character status"}
+                                     value={inputStatus}
+                                     onChange={statusOnChange}
+                /></div>
+                <div>type: <input type={"text"}
+                                    placeholder={"character type"}
+                                    value={inputType}
+                                    onChange={typeOnChange}
+                /></div>
+                <div>id: <input type={"number"}
+                                     value={inputId}
+                                     onChange={idOnChange}
                 /></div>
                 <div>image url: <input type={"text"}
                                      placeholder={"character image url"}

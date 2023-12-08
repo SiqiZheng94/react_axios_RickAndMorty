@@ -25,7 +25,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Welcome/>}/>
             <Route path="/characters" element={<CharacterGallery characters={characters}/>}/>
-            <Route path="/characters/:id" element={<CharacterDetailCard/>}/>
+            <Route path="/characters/:id" element={<CharacterDetailCard charactersList={characters}/>}/>
             <Route path="/addnewcharacter" element={<AddNewCharacter addNewCharacter={addNewCharacterInList}/>}/>
         </Routes>
         </>

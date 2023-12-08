@@ -1,8 +1,13 @@
 import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import {Character, charactersResponse} from "./characters.ts";
+import AddNewCharacter from"./addNewCharacter.tsx"
 
-export default function CharacterDetailCard() {
+type CharacterDetailCardProps={
+    charactersList:Character[]
+}
+
+export default function CharacterDetailCard(props:CharacterDetailCardProps) {
 
     let pathId = useParams().id
 
@@ -10,9 +15,13 @@ export default function CharacterDetailCard() {
 
     const [selectedCharacter, setSelectedCharacter] = useState<Character|null>(null)
 
-    const characterData:Character|undefined = charactersResponse.results.find(
+    // const characterData:Character|undefined = charactersResponse.results.find(
+    //     (character) => character.id.toString() === pathId
+    // );
+
+    const characterData:Character|undefined = props.charactersList.find(
         (character) => character.id.toString() === pathId
-    );
+    )
 
     useEffect(() => {
         if (characterData) {
