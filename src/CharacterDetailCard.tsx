@@ -44,6 +44,7 @@ export default function CharacterDetailCard() {
             <p>{selectedCharacter?.type}</p>
             <p>{selectedCharacter?.species}</p>
             <p>{selectedCharacter?.status}</p>
+            <img src={`${selectedCharacter?.image}`} alt={"character image"}/>
             {error}
         </div>
     );
