@@ -12,14 +12,6 @@ function App() {
 
     const [characters, setCharacters] = useState<Character[]>(charactersResponse.results)
 
-    const exampleCharacter:Character={
-        id: 0,
-        name: "",
-        status: "",
-        species: "",
-        type: ""
-    }
-    const [character, setCharacter] = useState<Character>(exampleCharacter)
 
 
 

@@ -9,9 +9,9 @@ export default function CharacterGallery(props: CharacterGalleryProps) {
 
     return (
         <div>
-            <p>
-                Gallery
-            </p>
+            <h2>
+                ---Gallery---
+            </h2>
             {props.characters.map(character => <CharacterCard
                                                                 key={character.id}
                                                                 character={character}/>)}
