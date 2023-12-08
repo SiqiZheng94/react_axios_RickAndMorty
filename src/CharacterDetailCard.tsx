@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import {Character, charactersResponse} from "../characters.ts";
+import {Character, charactersResponse} from "./characters.ts";
 
 export default function CharacterDetailCard() {
 

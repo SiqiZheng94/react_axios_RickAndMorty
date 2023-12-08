@@ -6,7 +6,7 @@ import {Link, Navigate, Route, Routes, useParams} from "react-router-dom";
 import Welcome from "./Welcome.tsx";
 import Navigation from "./Navigation.tsx";
 import CharacterCard from "./CharacterCard.tsx";
-import CharacterDetailCard from "./assets/CharacterDetailCard.tsx";
+import CharacterDetailCard from "./CharacterDetailCard.tsx";
 
 function App() {
 
